@@ -1,15 +1,19 @@
 # Current Status 
-1. We have a basic UI ready where we can view the 3D model of the construction. Of which we can change the dimensions and see it change actively. Also as an example we have made a bridge under construction, of which we can change the dimensions to see its changes as it is being built. Additionally the number of pillars change as we increase the length of the bridge.
+- We have a basic UI ready where we can view the 3D model of the construction. Of which we can change the dimensions and see it change actively. Also as an example we have made a bridge under construction, of which we can change the dimensions to see its changes as it is being built. Additionally the number of pillars change as we increase the length of the bridge.
 
-2. We are taking inspiration from Cities Skylines and Train Simulator for intuitive generation of 3D models.
+- We are taking inspiration from Cities Skylines and Train Simulator for **generative 3D modelling**.
 
-3. With time you can can see different stages of construction, dimensions as in game Cities Skylines.
+- With time you can can see different stages of construction, dimensions as in game Cities Skylines.
 
-4. DEM aka Digital Elevation Model data, route modelling from TS.
+- **DEM** aka Digital Elevation Model data, route modelling from TS.
 
-5. Using blockchain / crypto was not feasible so we opted for UPI payment option, which is much simpler to implement.
+- Using blockchain / crypto was not feasible so we opted for UPI payment option, which is much simpler to implement.
 
-6. Due to non availability of relevant equipment and software we could not work on the generative modelling concept.
+- Also we have considered implementing **blockchain** to transfer data of construction elements such that they remain immutable during the transaction from one party to another or unless voted out by the stakeholders to withhold the transaction.
+
+- Using blockchain we can more easily involve the stakeholders to approve or reject payment transactions when the work is adequately completed.
+
+- Due to non availability of relevant equipment and software we could not work on the generative modelling concept.
 
 # Getting Started with Create React App
 
