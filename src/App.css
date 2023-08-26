@@ -27,6 +27,48 @@
 .App-link {
   color: #61dafb;
 }
+/* Add your styles here */
+/* Example styles for navbar and footer */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
 
 @keyframes App-logo-spin {
   from {
