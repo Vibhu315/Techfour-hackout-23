@@ -1,5 +1,5 @@
 import React from 'react';
-import image from "/public/image.jpg";
+// import image from "/public"
 function Home() {
   const containerStyle = {
     backgroundColor: '#E6F7FF',
@@ -27,7 +27,7 @@ function Home() {
     <div className="home" style={containerStyle}>
       <h1 style={headingStyle}>Welcome to ReactApp</h1>
       <p style={paragraphStyle}>This is the home page content. It's a place to start your journey with React.</p>
-      <img src={image} alt="React Logo" style={{ maxWidth: '100%', marginTop: '20px' }} />
+      
     </div>
   );
 }
