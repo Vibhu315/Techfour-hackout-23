@@ -1,12 +1,12 @@
 /* Navbar.css */
 
-.navbar {
+/* .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
     padding: 20px;
-  }
+  } */
   
   .logo img {
     height: 40px;
@@ -26,7 +26,63 @@
   .nav-link:hover {
     color: lightgray;
   }
-  
+  /* Navbar container */
+.navbar {
+  background-color: #333;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar logo */
+.navbar-logo {
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-logo:hover {
+  color: #FFA500;
+}
+
+/* Navigation menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation items */
+.nav-item {
+  margin: 0 15px;
+}
+
+/* Navigation links */
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+  padding:10px 15px;
+}
+
+.nav-links:hover {
+  color: #FFA500;
+}
   /* Media Query for Responsive Design */
   @media (max-width: 768px) {
     .navbar {
