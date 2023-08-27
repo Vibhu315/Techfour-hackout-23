@@ -16,6 +16,49 @@
 - Due to non availability of relevant equipment and software we could not work on the generative modelling concept.
 
 
+# Flowcharts
+## 3D Modelling of an Ongoing Construction
+```mermaid
+graph TD
+A[Construction Company Hires 3D Modeler] --> B[Advance Payment Escrowed in Smart Contract]
+B --> C[Initial 3D Model Creation]
+C --> D[Initial Model Submission]
+D --> E[Review and Decision on Initial Model]
+E --> F[Release Payment for Initial Model]
+E --> G[Model Revisions and Updated 3D Model]
+G --> H[Updated Model Submission]
+H --> I[Review and Decision on Updated Model]
+I --> J[Release Payment for Revisions]
+I --> G
+J --> G
+J --> K[Final Payment Release and Completion]
+```
+
+## Creation of Smart Contract and Adding 3D Model to Blockchain Network
+```mermaid
+graph TD
+A[3D Model Ready] --> B[Mint Blockchain Token]
+B --> C[Create Smart Contract]
+C --> D[Deploy Smart Contract]
+D --> E[Submit Token Reference]
+E --> F[Access Token Reference and 3D Model]
+```
+
+## Transaction of Data Between Parties
+```mermaid
+graph TD
+A[Initialize Blockchain] --> B[Smart Contract]
+B --> C[Data Initialization]
+C --> D[Request Modification]
+D --> E[Voting Process]
+E --> F[Execute Modification]
+F --> G[Event Logging]
+G --> H[Access Control]
+H --> I[Frontend Interface]
+I --> J[Testing and Deployment]
+```
+
+
 # Problems we faced
 - Firstly, We were trying to implement the blockchain technology in the transaction of money also the data of the materials required to build the particular project.
 - We were also trying to build the 3D model using AR/VR and making it realtime, also with unity technology 3D model generator.
