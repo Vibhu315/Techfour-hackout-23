@@ -1,4 +1,4 @@
-# Current Status 
+# Current Status (phase2)
 - We have a basic UI ready where we can view the 3D model of the construction. Of which we can change the dimensions and see it change actively. Also as an example we have made a bridge under construction, of which we can change the dimensions to see its changes as it is being built. Additionally the number of pillars change as we increase the length of the bridge.
 
 - We are taking inspiration from Cities Skylines and Train Simulator for **generative 3D modelling**.
@@ -15,6 +15,12 @@
 
 - Due to non availability of relevant equipment and software we could not work on the generative modelling concept.
 
+# Current Status (phase3)
+- We have added the blockchain transaction functionality to transact the 3D model files.
+- We have designed the blockchain algorithms, test cases and constraints to increase the security and immutability of the design files
+-we have integrated the smartcontract.
+-Also researched about the different areas related to this field where this technology can be implemented.
+  
 
 # Flowcharts
 ## 3D Modelling of an Ongoing Construction
@@ -63,7 +69,12 @@ I --> J[Testing and Deployment]
 - Firstly, We were trying to implement the blockchain technology in the transaction of money also the data of the materials required to build the particular project.
 - We were also trying to build the 3D model using AR/VR and making it realtime, also with unity technology 3D model generator.
 - We thought to include the smart contracts for easy payments but, due to the time constraints we were unable to do that.
-      
+
+# Problems we faced (phase3)
+-Implementing Smartcontract
+-connecting to the blockchain network
+-3d model transaction implementation
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
