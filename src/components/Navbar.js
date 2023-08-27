@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-        Nebula Tech
+          ReactApp
         </Link>
         <ul className="nav-menu">
           <li className="nav-item">
@@ -15,6 +15,9 @@ function Navbar() {
             </Link>
             <Link to="/3dmodel" className="nav-links">
               3D model
+            </Link>
+            <Link to="/blockchainui" className="nav-links">
+              Model Transaction
             </Link>
           </li>
           {/* Add more menu items here */}

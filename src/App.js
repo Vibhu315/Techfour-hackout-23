@@ -33,6 +33,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 // import './App.css';
 import ThreeJSBridge from './components/d_model';
+import blockchain_ui from './components/blockchain_ui'
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/3dmodel" exact component={ThreeJSBridge} />
+        <Route path="/blockchainui" exact component={blockchain_ui} />
         {/* Add more routes here */}
       </Switch>
       {/* <Footer /> */}
