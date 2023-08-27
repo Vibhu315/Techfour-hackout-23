@@ -94,7 +94,7 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-![Screenshot 2023-08-27 093413](https://github.com/Jhamtanidev/Techfour-hackout-23/assets/92734164/2298e645-c328-4716-9546-c41f80c5af44)
 
-![Screenshot 2023-08-26 173532](https://github.com/Jhamtan![Screenshot 2023-08-27 093630](https://github.com/Jhamtanidev/Techfour-hackout-23/assets/92734164/371502b6-0ba4-47ff-9f51-f2929fcf41c2)
-idev/Techfour-hackout-23/assets/92734164/05f63928-c43f-4286-811b-76156dbcff9c)
+![Screenshot 2023-08-27 093809](https://github.com/Jhamtanidev/Techfour-hackout-23/assets/92734164/e286ec65-8478-440a-8e9c-9b20e29bf982)
+![Screenshot 2023-08-27 093630](https://github.com/Jhamtanidev/Techfour-hackout-23/assets/92734164/f8c64bc4-e854-464a-8ee7-2672d6209feb)
+![Screenshot 2023-08-27 093413](https://github.com/Jhamtanidev/Techfour-hackout-23/assets/92734164/7f05f0f8-3951-45f0-9d84-041ebb2fe474)
