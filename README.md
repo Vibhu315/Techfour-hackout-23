@@ -20,18 +20,18 @@
 ## 3D Modelling of an Ongoing Construction
 ```mermaid
 graph TD
-A[Construction Company Hires 3D Modeler] -->|Makes Advance Payment| B[Advance Payment Escrowed in Smart Contract]
-B -->|Modeler Creates Initial 3D Model| C[Initial 3D Model Creation]
-C -->|Modeler Submits Initial Model| D[Initial Model Submission]
-D -->|Construction Company Reviews Model| E[Review and Decision on Initial Model]
-E -->|Approved| F[Release Payment for Initial Model]
-E -->|Amendments Requested| G[Model Revisions and Updated 3D Model]
-G -->|Modeler Submits Updated Model| H[Updated Model Submission]
-H -->|Construction Company Reviews Model| I[Review and Decision on Updated Model]
-I -->|Approved| J[Release Payment for Revisions]
-I -->|Amendments Requested| G
-J -->|Further Revisions?| G
-J -->|No Further Revisions| K[Final Payment Release and Completion]
+A[Construction Company Hires 3D Modeler] --> B[Advance Payment Escrowed in Smart Contract]
+B --> C[Initial 3D Model Creation]
+C --> D[Initial Model Submission]
+D --> E[Review and Decision on Initial Model]
+E --> F[Release Payment for Initial Model]
+E --> G[Model Revisions and Updated 3D Model]
+G --> H[Updated Model Submission]
+H --> I[Review and Decision on Updated Model]
+I --> J[Release Payment for Revisions]
+I --> G
+J --> G
+J --> K[Final Payment Release and Completion]
 ```
 
 ## Creation of Smart Contract and Adding 3D Model to Blockchain Network
@@ -47,15 +47,15 @@ E --> F[Access Token Reference and 3D Model]
 ## Transaction of Data Between Parties
 ```mermaid
 graph TD
-A[Initialize Blockchain] -->|Deploy Smart Contract| B[Smart Contract]
-B -->|Initialize Data| C[Data Initialization]
-C -->|Request Modification| D[Request Modification]
-D -->|Adjacent Nodes Review| E[Voting Process]
-E -->|Consensus Threshold Met?| F[Execute Modification]
-F -->|Log Events| G[Event Logging]
-G -->|Access Control| H[Access Control]
-H -->|User-Friendly Frontend| I[Frontend Interface]
-I -->|Testing and Deployment| J[Testing and Deployment]
+A[Initialize Blockchain] --> B[Smart Contract]
+B --> C[Data Initialization]
+C --> D[Request Modification]
+D --> E[Voting Process]
+E --> F[Execute Modification]
+F --> G[Event Logging]
+G --> H[Access Control]
+H --> I[Frontend Interface]
+I --> J[Testing and Deployment]
 ```
 
 
