@@ -27,11 +27,11 @@
 
 
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch , Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 // import Footer from './components/Footer';
 import Home from './components/Home';
-import './App.css';
+// import './App.css';
 import ThreeJSBridge from './components/d_model';
 
 function App() {

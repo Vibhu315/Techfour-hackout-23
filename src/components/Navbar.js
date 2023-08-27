@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          ReactApp
+        Nebula Tech
         </Link>
         <ul className="nav-menu">
           <li className="nav-item">
