@@ -56,36 +56,41 @@
 
 import React, { useState, useEffect } from 'react';
 import * as THREE from 'three';
+import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter';
+
 
 function ThreeJSBridge() {
-    const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
+  const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [positionX, setPositionX] = useState(0);
   const [positionY, setPositionY] = useState(0);
   const [positionZ, setPositionZ] = useState(0);
   const [width, setWidth] = useState(5);
   const [height, setHeight] = useState(3);
   const [length, setLength] = useState(1);
-
+  const [pillarSpacing, setPillarSpacing] = useState(1.5); // Default pillar spacing
+  const [isAnimating, setIsAnimating] = useState(true);
+  // const [savedRotation, setSavedRotation] = useState(0);
+  const [scene, setScene] = useState(new THREE.Scene());
+ 
   useEffect(() => {
     // Initialize scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas') });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    const numPillars = Math.floor(width / pillarSpacing) + 1;
 
     // Create a bridge-like structure
-    const bridge = new THREE.Object3D();
+    const bridge = new THREE.Group();
 
     // Create bridge pillars
     const pillarGeometry = new THREE.BoxGeometry(0.5, height, 0.5);
     const pillarMaterial = new THREE.MeshBasicMaterial({ color: 0x808080 });
-    const pillar1 = new THREE.Mesh(pillarGeometry, pillarMaterial);
-    pillar1.position.set(positionX - 2, positionY + height / 2, positionZ);
-    bridge.add(pillar1);
-
-    const pillar2 = new THREE.Mesh(pillarGeometry, pillarMaterial);
-    pillar2.position.set(positionX + 2, positionY + height / 2, positionZ);
-    bridge.add(pillar2);
+    for (let i = 0; i < numPillars; i++) {
+      const pillar = new THREE.Mesh(pillarGeometry, pillarMaterial);
+      pillar.position.set(positionX - (width / 2) + (i * pillarSpacing), positionY + height / 2, positionZ);
+      bridge.add(pillar);
+    }
 
     // Create bridge deck
     const deckGeometry = new THREE.BoxGeometry(width, 0.2, length);
@@ -98,23 +103,27 @@ function ThreeJSBridge() {
 
     // Position the camera
     camera.position.z = 8;
-
+    setScene(scene);
     // Render loop
     const animate = () => {
       requestAnimationFrame(animate);
-
-      // Rotate the bridge
-      bridge.rotation.y += 0.005;
-
+    
+      if (isAnimating) {
+        bridge.rotation.y += 0.009;
+      }
+    
       renderer.render(scene, camera);
     };
+    
+    
+  
     animate();
-  }, [positionX, positionY, positionZ, width, height, length]);
-
+  }, [positionX, positionY, positionZ, width, height, length, pillarSpacing,isAnimating]);
+  
   const sidebarStyles = {
     position: 'fixed',
     top: 75,
-    left: isSidebarExpanded? 0 : '-250px',
+    left: isSidebarExpanded ? 0 : '-250px',
     zIndex: 1,
     width: '250px',
     padding: '20px',
@@ -124,17 +133,16 @@ function ThreeJSBridge() {
     overflowY: 'auto',
     height: '100vh',
   };
-
-//   const canvasStyles = {
-//     flex: 1,
-//     marginLeft: sidebarExpanded ? '250px' : '0',
-//     transition: 'margin-left 0.3s ease-in-out',
-//   };
+  const exportModel = () => {
+    const exporter = new GLTFExporter();
   
-
-  const canvasStyles = {
-    // ... (other styles)
-    marginLeft: isSidebarExpanded ? '250px' : '0', // Corrected variable name
+    exporter.parse(scene, (gltf) => {
+      const blob = new Blob([gltf], { type: 'application/octet-stream' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'bridge_model.gltf';
+      link.click();
+    });
   };
   return (
     <div style={{ display: 'flex', overflow: 'hidden' }}>
@@ -144,17 +152,17 @@ function ThreeJSBridge() {
         onMouseEnter={() => setIsSidebarExpanded(true)}
         onMouseLeave={() => setIsSidebarExpanded(false)}
       >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '19px' }}>
-        <label htmlFor="positionX" style={{ display: 'flex', flexDirection: 'column', marginTop: '15px' }}>Position X:</label>
-        <input
-          type="number"
-          id="positionX"
-          placeholder="Enter X position"
-          value={positionX}
-          onChange={(e) => setPositionX(parseFloat(e.target.value))}
-        />
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '19px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '19px' }}>
+          <label htmlFor="positionX">Position X:</label>
+          <input
+            type="number"
+            id="positionX"
+            placeholder="Enter X position"
+            value={positionX}
+            onChange={(e) => setPositionX(parseFloat(e.target.value))}
+          />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '19px' }}>
         <label htmlFor="positionY" style={{ display: 'flex', flexDirection: 'column', marginTop: '15px' }}>Position Y:</label>
         <input
           type="number"
@@ -204,9 +212,42 @@ function ThreeJSBridge() {
           onChange={(e) => setLength(parseFloat(e.target.value))}
         />
       </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+        <label htmlFor="pillarSpacing">Pillar Spacing:</label>
+        <input
+          type="number"
+          id="pillarSpacing"
+          placeholder="Enter pillar spacing"
+          value={pillarSpacing}
+          onChange={(e) => setPillarSpacing(parseFloat(e.target.value))}
+        />
+      </div>
+      <button style={{  padding: '8px 20px',
+      marginBottom:'5px',
+      marginTop:'5px',  
+            backgroundColor: '#27ae60',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            marginRight: '10px',
+            transition: 'background-color 0.3s ease-in-out',}} onClick={() => setIsAnimating(!isAnimating)}>
+          {isAnimating ? 'Pause Animation' : 'Resume Animation'}
+        </button>
+        {/* <button onClick={isAnimating ? saveAndStopAnimation : resumeAnimation}>
+          {isAnimating ? 'Stop Animation' : 'Resume Animation'}
+        </button> */}
+        <button  style={{padding: '8px 20px',
+            backgroundColor: '#3498db',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s ease-in-out',}} onClick={exportModel}>Export Model</button>
+        
+      </div>
+      <canvas id="canvas" style={{ flex: '1' }}></canvas>
     </div>
-    <canvas id="canvas" style={{ flex: '1' }}></canvas>
-  </div>
   );
 }
 

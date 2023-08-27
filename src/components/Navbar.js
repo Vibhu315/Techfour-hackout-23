@@ -16,6 +16,9 @@ function Navbar() {
             <Link to="/3dmodel" className="nav-links">
               3D model
             </Link>
+            <Link to="/blockchainui" className="nav-links">
+              Model Transaction
+            </Link>
           </li>
           {/* Add more menu items here */}
         </ul>
