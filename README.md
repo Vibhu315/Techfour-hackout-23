@@ -1,4 +1,4 @@
-0# Current Status 
+# Current Status 
 - We have a basic UI ready where we can view the 3D model of the construction. Of which we can change the dimensions and see it change actively. Also as an example we have made a bridge under construction, of which we can change the dimensions to see its changes as it is being built. Additionally the number of pillars change as we increase the length of the bridge.
 
 - We are taking inspiration from Cities Skylines and Train Simulator for **generative 3D modelling**.
