@@ -1,4 +1,4 @@
-# Current Status 
+0# Current Status 
 - We have a basic UI ready where we can view the 3D model of the construction. Of which we can change the dimensions and see it change actively. Also as an example we have made a bridge under construction, of which we can change the dimensions to see its changes as it is being built. Additionally the number of pillars change as we increase the length of the bridge.
 
 - We are taking inspiration from Cities Skylines and Train Simulator for **generative 3D modelling**.
@@ -16,7 +16,25 @@
 - Due to non availability of relevant equipment and software we could not work on the generative modelling concept.
 
 
-## 
+# Flowcharts
+## 3D Modelling of an Ongoing Construction
+```mermaid
+graph TD
+A[Construction Company Hires 3D Modeler] -->|Makes Advance Payment| B[Advance Payment Escrowed in Smart Contract]
+B -->|Modeler Creates Initial 3D Model| C[Initial 3D Model Creation]
+C -->|Modeler Submits Initial Model| D[Initial Model Submission]
+D -->|Construction Company Reviews Model| E[Review and Decision on Initial Model]
+E -->|Approved| F[Release Payment for Initial Model]
+E -->|Amendments Requested| G[Model Revisions and Updated 3D Model]
+G -->|Modeler Submits Updated Model| H[Updated Model Submission]
+H -->|Construction Company Reviews Model| I[Review and Decision on Updated Model]
+I -->|Approved| J[Release Payment for Revisions]
+I -->|Amendments Requested| G
+J -->|Further Revisions?| G
+J -->|No Further Revisions| K[Final Payment Release and Completion]
+```
+
+## Creation of Smart Contract and Adding 3D Model to Blockchain Network
 ```mermaid
 graph TD
 A[3D Model Ready] --> B[Mint Blockchain Token]
@@ -24,6 +42,20 @@ B --> C[Create Smart Contract]
 C --> D[Deploy Smart Contract]
 D --> E[Submit Token Reference]
 E --> F[Access Token Reference and 3D Model]
+```
+
+## Transaction of Data Between Parties
+```mermaid
+graph TD
+A[Initialize Blockchain] -->|Deploy Smart Contract| B[Smart Contract]
+B -->|Initialize Data| C[Data Initialization]
+C -->|Request Modification| D[Request Modification]
+D -->|Adjacent Nodes Review| E[Voting Process]
+E -->|Consensus Threshold Met?| F[Execute Modification]
+F -->|Log Events| G[Event Logging]
+G -->|Access Control| H[Access Control]
+H -->|User-Friendly Frontend| I[Frontend Interface]
+I -->|Testing and Deployment| J[Testing and Deployment]
 ```
 
 
