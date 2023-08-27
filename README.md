@@ -16,6 +16,17 @@
 - Due to non availability of relevant equipment and software we could not work on the generative modelling concept.
 
 
+## 
+```mermaid
+graph TD
+A[3D Model Ready] --> B[Mint Blockchain Token]
+B --> C[Create Smart Contract]
+C --> D[Deploy Smart Contract]
+D --> E[Submit Token Reference]
+E --> F[Access Token Reference and 3D Model]
+```
+
+
 # Problems we faced
 - Firstly, We were trying to implement the blockchain technology in the transaction of money also the data of the materials required to build the particular project.
 - We were also trying to build the 3D model using AR/VR and making it realtime, also with unity technology 3D model generator.
